@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Labo1
 {
-    internal class Coordonnees
+    public class Coordonnees
     {
         private int X;
 
@@ -36,7 +36,7 @@ namespace Labo1
 
         public override string ToString()
         {
-            return 
+            return "("+X+","+Y+")";
         }
     }
 }
