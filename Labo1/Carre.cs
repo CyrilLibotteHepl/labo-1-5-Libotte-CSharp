@@ -8,11 +8,12 @@ namespace Labo1
 {
     public class Carre : Forme, ISommets
     {
-        protected int cote;
-        public int cote
+        protected int _Cote;
+
+        public int Cote
         {
-            get { return cote; }
-            set { cote = value; }
+            get { return _Cote; }
+            set { _Cote = value; }
         }
 
         public Carre (int c)
