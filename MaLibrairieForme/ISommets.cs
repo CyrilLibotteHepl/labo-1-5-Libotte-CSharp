@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassLibrary2
+namespace MaLibrairieForme
 {
-    internal class Personne
+    public interface ISommets
     {
+        public int NbSommets
+        { get; }
     }
 }

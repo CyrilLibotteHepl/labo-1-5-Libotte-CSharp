@@ -1,0 +1,135 @@
+﻿<Window x:Class="Labo3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Labo3"
+        mc:Ignorable="d"
+        Title="FormeGeoLayout" Height="450" Width="800">
+    <Grid Background= " #252221 " Name="MainGrid">
+        <Grid>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width=" *" />
+                    <ColumnDefinition Width=" *" />
+                    <ColumnDefinition Width=" *" />
+                </Grid.ColumnDefinitions>
+                <ScrollViewer  Grid.Column="0">
+                    <ListBox x:Name="listBox" ItemsSource="{Binding}" SelectionChanged="MaListBox_SelectionChanged1">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="test" Text="{Binding}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+                <ScrollViewer  Grid.Column="1">
+                    <ListBox x:Name="listBox1" ItemsSource="{Binding}" SelectionChanged="MaListBox_SelectionChanged2">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="test1" Text="{Binding}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+                <ScrollViewer  Grid.Column="2">
+                    <ListBox x:Name="listBox2" ItemsSource="{Binding}" SelectionChanged="MaListBox_SelectionChanged3">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Name="test2" Text="{Binding}"/>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            </Grid>
+
+            <Grid Grid.Row ="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Button Name="BoutonAjouter" Margin="10,10,10,10" Click="Ajouter" Background="#5499c7" Foreground="White" FontSize="20" BorderThickness="0" Grid.Row ="0">Ajouter</Button>
+                    <Button Name="Configuration" Margin="10,10,10,10" Click="NouvelleFenetre" Background="#d7dbdd" Foreground="White" FontSize="20" BorderThickness="0" Grid.Row ="1">Configuration</Button>
+                </Grid>
+
+                <Grid Grid.Column="0" Grid.Row=" 0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Grid.Row=" 0" Name ="LesCheckbox">
+                        <CheckBox Name="CheckBoxCarre" Margin="0,0,0,10" Click="CheckBox_Click" Grid.Column=" 0" Content="Carre" Foreground="White" VerticalContentAlignment="Center" HorizontalContentAlignment ="Center" FontSize="20" BorderThickness="0"/>
+                        <CheckBox Name="CheckBoxRectangle" Margin="0,0,0,10" Click="CheckBox_Click" Grid.Column=" 0" Content="Rectangle" Foreground="White" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment ="Center" BorderThickness="0"/>
+                        <CheckBox Name="CheckBoxCercle" Margin="0,0,0,10" Click="CheckBox_Click" Grid.Column=" 0" Content="Cercle" Foreground="White" FontSize="20" VerticalContentAlignment="Center" HorizontalContentAlignment ="Center" BorderThickness="0" />
+                    </StackPanel>
+                    <GroupBox Margin="0,10,0,10" Grid.Row=" 1" Header="Selection" Foreground="White" >
+                        <Border BorderBrush="Gray" BorderThickness="1">
+                            <TextBox Name ="AfficheResult" IsReadOnly="True" Grid.Row=" 1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="14" VerticalContentAlignment="Center"/>
+                        </Border>
+                    </GroupBox>
+                </Grid>
+
+
+                <Grid Grid.Row=" 1" Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <GroupBox Grid.Row="0" Header="Longueur" Foreground="White" >
+                        <Border BorderBrush="Gray" BorderThickness="1">
+                            <TextBox Name ="ITextBox1"  Grid.Row="0" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" VerticalContentAlignment="Center"/>
+                        </Border>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Largeur" Foreground="White" >
+                        <Border BorderBrush="Gray" BorderThickness="1">
+                            <TextBox Name ="ITextBox2" Grid.Row="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" VerticalContentAlignment="Center"/>
+                        </Border>
+                    </GroupBox>
+                    <GroupBox Grid.Row="2" Header="Rayon" Foreground="White" >
+                        <Border BorderBrush="Gray" BorderThickness="1">
+                            <TextBox Name ="ITextBox3" Grid.Row="2" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" VerticalContentAlignment="Center"/>
+                        </Border>
+                    </GroupBox>
+
+                    <Grid Grid.Row="3">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <GroupBox Grid.Column="0" Header="Coordonnee X" Foreground="White" >
+                            <Border BorderBrush="Gray" BorderThickness="1">
+                                <TextBox Name ="ITextBox4" Grid.Column="0" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" VerticalContentAlignment="Center"/>
+                            </Border>
+                        </GroupBox>
+                        <GroupBox Grid.Column="1" Header="Coordonnee Y" Foreground="White" >
+                            <Border BorderBrush="Gray" BorderThickness="1">
+                                <TextBox Name ="ITextBox5" Grid.Column="1" TextWrapping="Wrap" AcceptsReturn="True" FontSize="20" VerticalContentAlignment="Center"/>
+                            </Border>
+                        </GroupBox>
+
+                    </Grid>
+                </Grid>
+
+            </Grid>
+
+
+        </Grid>
+    </Grid>
+</Window>

@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Labo1
+namespace MaLibrairieForme
 {
     public interface IEstDans
-    { 
-        #region INCLUE
-        public bool CoordonneeEstDans(Coordonnee p);
-        #endregion
-
+    {
+        public bool CoordonneeEstDans(Coordonnees p);
     }
 }
